@@ -1,0 +1,36 @@
+name: Execution Performance
+
+on:
+  workflow_dispatch:
+    inputs:
+      testSuite:
+        type: string
+        description: 'Test Suite to execute'
+        required: true
+        default: 'pokemonapi.PokemonApiTest'
+      quantityUsers:
+        type: string
+        description: 'Quantity of users concurrent'
+        required: true
+        default: '5'
+
+jobs:
+  execpokemonapi:
+    runs-on: ubuntu-latest
+    name: Execution Performance Pokemon API
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v3
+
+      - name: Execute test
+        run: gradle gatlingRun --simulation=${{ inputs.testSuite }} -DquantityUsers=${{ inputs.quantityUsers }}
+
+      - name: Save report
+        if: ${{always()}}
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: gatling report
+          path: ./build/reports/gatling

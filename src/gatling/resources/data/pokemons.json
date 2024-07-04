@@ -1,0 +1,26 @@
+[
+  {
+    "name": "onix",
+    "baseExperience": 77
+  },
+  {
+    "name": "ditto",
+    "baseExperience": 101
+  },
+  {
+    "name": "pikachu",
+    "baseExperience": 112
+  },
+  {
+    "name": "charmander",
+    "baseExperience": 62
+  },
+  {
+    "name": "psyduck",
+    "baseExperience": 64
+  },
+  {
+    "name": "butterfree",
+    "baseExperience": 112
+  }
+]

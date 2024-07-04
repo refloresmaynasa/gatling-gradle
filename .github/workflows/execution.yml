@@ -7,7 +7,7 @@ on:
         type: string
         description: 'Test Suite to execute'
         required: true
-        default: 'pokemonapi.PokemonApiTest'
+        default: 'pokemonapi.PokemonTestApi'
       quantityUsers:
         type: string
         description: 'Quantity of users concurrent'

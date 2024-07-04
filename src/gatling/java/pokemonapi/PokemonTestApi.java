@@ -26,7 +26,7 @@ public class PokemonTestApi extends Simulation {
     // Define scenario
     ScenarioBuilder scn = scenario("Prokemon API Test")
             .feed(feeder)
-            .exec(http("Get Pikachu")
+            .exec(http("Get #{name}")
                     .get("/#{name}")
                     .check(jmesPath("base_experience").isEL("#{baseExperience}"))
                     .check(jmesPath("abilities[0].ability.name").find().saveAs("ability"))

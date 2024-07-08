@@ -35,6 +35,17 @@ jobs:
           name: gatling report
           path: ./build/reports/gatling
 
+      - name: "Publish test results"
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        if: ${{ always() }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: './build/reports/gatling'
+          keep_files: true
+          user_name: refloresmaynasa
+          user_email: ricky.reflores@gmail.com
+          publish_branch: gh_page
+
       - name: Deploy report to Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v2

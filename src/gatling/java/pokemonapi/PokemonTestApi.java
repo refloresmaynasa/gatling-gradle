@@ -10,7 +10,7 @@ import static io.gatling.javaapi.http.HttpDsl.http;
 import static io.gatling.javaapi.http.HttpDsl.status;
 
 public class PokemonTestApi extends Simulation {
-    // Add enviroment variables
+    // Add environment variables
     String baseUrl = System.getProperty("baseUrl", "https://pokeapi.co/api/v2/pokemon");
     String quantityUsers = System.getProperty("quantityUsers", "5");
 

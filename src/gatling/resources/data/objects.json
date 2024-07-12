@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Smart TV",
+    "data": {
+      "category": "Electronics",
+      "brand": "Samsung",
+      "color": "Black",
+      "price": 499.99,
+      "inStock": true
+    }
+  },
+  {
+    "name": "Laptop",
+    "data": {
+      "category": "Computers",
+      "brand": "Dell",
+      "color": "Silver",
+      "price": 899.99,
+      "inStock": true
+    }
+  },
+  {
+    "name": "Smart Watch",
+    "data": {
+      "category": "Wearables",
+      "brand": "Apple",
+      "color": "Space Gray",
+      "price": 199.99,
+      "inStock": true
+    }
+  },
+  {
+    "name": "Tablet",
+    "data": {
+      "category": "Computers",
+      "brand": "Apple",
+      "color": "Gold",
+      "price": 329.99,
+      "inStock": false
+    }
+  },
+  {
+    "name": "Headphones",
+    "data": {
+      "category": "Audio",
+      "brand": "Bose",
+      "color": "Black",
+      "price": 149.99,
+      "inStock": true
+    }
+  },
+  {
+    "name": "Gaming Console",
+    "data": {
+      "category": "Gaming",
+      "brand": "Sony",
+      "color": "White",
+      "price": 499.99,
+      "inStock": true
+    }
+  },
+  {
+    "name": "Bluetooth Speaker",
+    "data": {
+      "category": "Audio",
+      "brand": "JBL",
+      "color": "Blue",
+      "price": 99.99,
+      "inStock": false
+    }
+  },
+  {
+    "name": "Digital Camera",
+    "data": {
+      "category": "Photography",
+      "brand": "Canon",
+      "color": "Black",
+      "price": 799.99,
+      "inStock": true
+    }
+  },
+  {
+    "name": "Fitness Tracker",
+    "data": {
+      "category": "Wearables",
+      "brand": "Fitbit",
+      "color": "Black",
+      "price": 59.99,
+      "inStock": true
+    }
+  },
+  {
+    "name": "eReader",
+    "data": {
+      "category": "Electronics",
+      "brand": "Amazon",
+      "color": "White",
+      "price": 129.99,
+      "inStock": false
+    }
+  }
+]

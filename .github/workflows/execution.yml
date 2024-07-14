@@ -37,14 +37,14 @@ jobs:
 
       - name: Determinate result folder
         id: result_folder
-        run: ls ./build/reports/gatling | head -1
+        run: echo "resultFolder=$(ls ./build/reports/gatling | head -1)" >> "$GITHUB_OUTPUT"
 
       - name: Publish test results
         uses: peaceiris/actions-gh-pages@v3.7.3
         if: ${{ always() }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: './build/reports/gatling/${{ steps.result_folder.outputs.stdout }}'
+          publish_dir: './build/reports/gatling/${{ steps.result_folder.outputs.resultFolder }}'
           keep_files: true
           user_name: refloresmaynasa
           user_email: ricky.reflores@gmail.com

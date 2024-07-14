@@ -27,17 +27,15 @@ public class ObjectRestApi extends Simulation {
         .exec(http("POST #{name}")
             .post("")
             .header("content-type", "application/json")
-            .body(StringBody("""
-                {
-                   "name": "#{name}",
-                   "data": {
-                        "category": "#{data.category}",
-                        "brand": "#{data.brand}",
-                        "color": "#{data.color}",
-                        "price": #{data.price}
-                   }
-                }
-                """))
+            .body(StringBody("{\n" +
+                "                   \"name\": \"#{name}\",\n" +
+                "                   \"data\": {\n" +
+                "                        \"category\": \"#{data.category}\",\n" +
+                "                        \"brand\": \"#{data.brand}\",\n" +
+                "                        \"color\": \"#{data.color}\",\n" +
+                "                        \"price\": #{data.price}\n" +
+                "                   }\n" +
+                "                }"))
             .check(status().is(200))
             .check(bodyLength().gt(100))
             .check(jmesPath("id").saveAs("ID"))
@@ -45,18 +43,16 @@ public class ObjectRestApi extends Simulation {
         .exec(http( "PUT #{name}")
                 .put(session ->  "/" + session.getString("ID"))
                 .header("content-type", "application/json")
-                .body(StringBody("""
-                    {
-                       "name": "#{name}",
-                       "data": {
-                            "category": "#{data.category}",
-                            "brand": "#{data.brand}",
-                            "color": "#{data.color}",
-                            "price": #{data.price},
-                            "inStock": #{data.inStock}
-                       }
-                    }
-                    """))
+                .body(StringBody("{\n" +
+                    "                       \"name\": \"#{name}\",\n" +
+                    "                       \"data\": {\n" +
+                    "                            \"category\": \"#{data.category}\",\n" +
+                    "                            \"brand\": \"#{data.brand}\",\n" +
+                    "                            \"color\": \"#{data.color}\",\n" +
+                    "                            \"price\": #{data.price},\n" +
+                    "                            \"inStock\": #{data.inStock}\n" +
+                    "                       }\n" +
+                    "                    }"))
                 .check(status().is(200))
                 .check(bodyLength().gt(20))
                 .check(jmesPath("data.inStock").isEL("#{data.inStock}"))

@@ -44,7 +44,7 @@ jobs:
         if: ${{ always() }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: './build/reports/gatling/${{ steps.result_folder.outputs }}'
+          publish_dir: './build/reports/gatling/${{ steps.result_folder.outputs.stdout }}'
           keep_files: true
           user_name: refloresmaynasa
           user_email: ricky.reflores@gmail.com
